@@ -1,12 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
-<head>
+<head>  
   <meta charset="utf-8">
-  <title>ヤー></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>軽音部室予約サイト</title>
 </head>
 
 <body>
-  <h1>ようこそ</h1>
-  <h2>更新されるか確認</h2>
+<h1>部室予約を行います</h1>
+
+<div>
+  <p id="user-status">ログインしていません</p>
+  <button id="login-btn">Googleでログイン(大学のアカウント)</button>
+  <button id="logout-btn" style="display: none;">ログアウト</button>
+</div>
+<hr>
+
+<div id="app-area" style="display: none">
+  <select id="period-select">
+    <option value="1限">1限 9:00~10:30</option>
+    <option value="2限">2限 10:40~12:10</option>
+    <option value="昼休み">昼休み 12:10~13:00</option>
+    <option value="3限">3限 13:00~14:30</option>
+    <option value="4限">4限 14:40~16:10</option>
+    <option value="5限">5限 16:20~17:50</option>
+    <option value="授業外">授業外 17:50~18:30</option>
+  </select>
+
+  <input type="text" id="band-input" placeholder="バンド名を入力">
+  <button id="book-btn">予約</button>
+
+  <h2>予約一覧</h2>
+  <ul id="booking-list"></ul>
+</div>
+
+<script type="module" src="app.js"></script>
+
 </body>
 </html>
