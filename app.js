@@ -18,7 +18,7 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
 const userStatus = document.getElementById("user-status");
-const loginBtn = document.getElementById("login-Btn");
+const loginBtn = document.getElementById("login-btn");
 const logoutBtn = document.getElementById("logout-btn");
 const appArea = document.getElementById("app-area");
 
@@ -34,13 +34,13 @@ logoutBtn.addEventListener("click", () =>{
 
 onAuthStateChanged(auth, (user) => {
     if(user){
-        if(!user.email.endWith("@std.nagaokauniv.ac.jp")){
+        if(!user.email.endsWith("@std.nagaokauniv.ac.jp")){
             alert("大学のGoogleアカウントでログインしてください(std.nagaokauniv.ac.jp)");
             signOut(auth);
             return;
         }
         
-        userStatus.textContent = "ログイン中" + user.displayName + "(" + user.email + ")";
+        userStatus.textContent = "ログイン中 : " + user.displayName + "(" + user.email + ")";
         loginBtn.style.display = "none";
         logoutBtn.style.display = "inline-block";
         appArea.style.display = "block";
