@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getAuth, signInWithPopup, GoogleAuthProvider, sighOut, onAuthStateChanged } 
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } 
 from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 const firebaseConfig = {
@@ -23,7 +23,7 @@ const logoutBtn = document.getElementById("logout-btn");
 const appArea = document.getElementById("app-area");
 
 loginBtn.addEventListener("click", () =>{
-    sighInWithPopup(auth, provider).catch((error) =>{
+    signInWithPopup(auth, provider).catch((error) =>{
         alert("ログインに失敗しました" + error.message);
     });
 });
